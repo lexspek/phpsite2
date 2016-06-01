@@ -1,0 +1,80 @@
+<?php
+
+ if (isset($_POST['roll']))
+ {
+     $getal1 = $_POST['getal1'];
+     $getal2 = $_POST['getal2'];
+     if (!is_numeric($getal1) || !is_numeric($getal2))
+     {
+         exit("Je hebt geen getallen ingevoerd. Probeer het alstublieft opnieuw.");
+     }
+     else 
+     {
+         if ($getal1 < $getal2)
+         {
+             $rand = mt_rand($getal1, $getal2);
+             echo "Het willekeurig getal is: <b>".$rand."</b><br />";
+         }
+         else 
+         {
+             exit("Je begingetal is groter dan je eindgetal en dit mag jammer genoeg niet. Probeer het opnieuw.");
+         }
+     }
+ }
+
+?>
+
+<html>
+<head>
+<title>Random Getal </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+padding: 10px;
+}
+html, body {
+    	height:100%;
+	font-family:Florence, cursive;
+	background-color:lightblue;
+	padding-left:10%;
+	padding-right:10%;
+	padding-top:5%;
+	padding-bottom:5%;
+
+}
+h1 {
+	text-shadow: 2px 2px blue;
+	transform: rotate(7deg);
+}
+h4 {
+	text-decoration:underline;
+	border:10px, groove, blue;
+}
+klikkie {
+	text-color:red;
+	text-decoration:underline;
+	
+}
+input[type=text]	{
+	width:100px;
+transition: width, 1s, ease-in-out;
+}
+input[type=text]:focus {
+width:200px;
+}
+</style>
+</head>
+<body>
+<h1> Willekeurige Getallen Generator </h1>
+<h5> Gemaakt door Lex Spek </h5>
+<h4> vul voor het begingetal een lager getal in als het eindgetal </h4>
+<input type='text'  name='getal1' value=''> <?php echo isset($_POST['getal1']) ? $_POST['getal1'] : 1; ?> Begingetal  <br />
+<input type='text' name='getal2' value=''> <?php echo isset($_POST['getal2']) ? $_POST['getal2'] : 100; ?> Eindgetal <br />
+<div class='klikkie'>
+<input type='submit' name='roll' value='Klik hier om een willekeurig getal te laten genereren.'> <br />
+</div>
+</form>
+</body>
+</html>
