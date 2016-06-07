@@ -70,8 +70,8 @@ width:200px;
 <h1> Willekeurige Getallen Generator </h1>
 <h5> Gemaakt door Lex Spek </h5>
 <h4> vul voor het begingetal een lager getal in als het eindgetal </h4>
-<input type='text'  name='getal1' value=''> <?php echo isset($_POST['getal1']) ? $_POST['getal1'] : 1; ?> Begingetal  <br />
-<input type='text' name='getal2' value=''> <?php echo isset($_POST['getal2']) ? $_POST['getal2'] : 100; ?> Eindgetal <br />
+<input type='text'  name='getal1' value='<?php echo isset($_POST['getal1']) ? $_POST['getal1'] : 1; ?>'>  Begingetal  </input> <br />
+<input type='text' name='getal2' value='<?php echo isset($_POST['getal2']) ? $_POST['getal2'] : 100; ?>'>  Eindgetal </input> <br />
 <div class='klikkie'>
 <input type='submit' name='roll' value='Klik hier om een willekeurig getal te laten genereren.'> <br />
 </div>
